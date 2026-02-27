@@ -20,7 +20,7 @@ export class AuthController {
 
 
 
-        res.json( "register user")
+        res.json( "login user")
 
     }
     
@@ -31,7 +31,7 @@ export class AuthController {
 
 
 
-        res.json( "register user")
+        res.json( "validate Email")
 
     }
 }
