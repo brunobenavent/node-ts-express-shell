@@ -41,11 +41,6 @@ export class AuthController {
         this.authService.loginUser(loginUserDto!)
         .then( user => res.json({ user }) )
         .catch( error => this.hadleError(error, res) );
-
-
-
-        res.json( "login user")
-
     }
     
 
