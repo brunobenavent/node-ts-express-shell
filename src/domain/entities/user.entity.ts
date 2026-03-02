@@ -1,4 +1,4 @@
-import { CustomError } from "../indext";
+import { CustomError } from "..";
 
 
 export class UserEntity {
