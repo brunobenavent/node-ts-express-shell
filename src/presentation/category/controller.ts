@@ -26,12 +26,6 @@ export class CategoryController {
             .then(category => res.status(201).json(category))
             .catch( error=> this.hadleError(error, res))
     
-
-
-
-
-
-
     }
      getCategories = async(req: Request, res: Response) => {
 

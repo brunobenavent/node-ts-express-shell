@@ -38,7 +38,8 @@ export class ProductService {
                 ProductModel.find()
                  .skip((page - 1) * limit)
                  .limit(limit)
-                 //todo: populate
+                 .populate('user')
+                 .populate('category')
                 ])
 
             return{

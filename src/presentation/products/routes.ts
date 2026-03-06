@@ -13,8 +13,8 @@ export class ProductRoutes {
   static get routes(): Router {
 
     const router = Router();
-     const categoryService = new ProductService()
-    const controller = new ProductController(categoryService)
+    const productService = new ProductService()
+    const controller = new ProductController(productService)
 
     // Definir las rutas
     router.get('/', controller.getProducts);
