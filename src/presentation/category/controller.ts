@@ -1,13 +1,12 @@
 import { Request, Response } from 'express';
-import { CreateCategoryDto, CustomError, PaginationDto } from '../../domain';
-import { CategoryService } from '../services/category.service';
+import { CustomError } from '../../domain';
 
 
 
-export class CategoryController {
+export class FileUploadController {
 
     constructor(
-        private readonly categoryService: CategoryService
+        // private readonly categoryService: CategoryService
     ){}
 
     
@@ -19,25 +18,12 @@ export class CategoryController {
         return res.status(500).json({ error: 'Internal Server Error' });
 
     }
-    createCategory = (req: Request, res: Response) => {
-        const [error, createCategoryDto ]= CreateCategoryDto.create(req.body)
-        if(error) return res.status(400).json({ error });
-        this.categoryService.createCategory(createCategoryDto!, req.body.user)
-            .then(category => res.status(201).json(category))
-            .catch( error=> this.hadleError(error, res))
-    
-    }
-     getCategories = async(req: Request, res: Response) => {
-
-        const {limit = 10, page = 1} = req.query
-        const [error, paginationDto] = PaginationDto.create(+page, +limit)
-
-        if(error) return res.status(400).json({error})
-
-
-        this.categoryService.getCategories(paginationDto!)
-         .then(categories =>res.status(200).json(categories))
-         .catch( error => this.hadleError(error, res))
+    uploadFile = (req: Request, res: Response) => {
         
+    res.json('uploadFile')
+    }
+    uploadMultipleFiles = (req: Request, res: Response) => {
+        
+    res.json('uploadMultipleFiles')
     }
 }
